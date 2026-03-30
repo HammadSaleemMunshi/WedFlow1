@@ -1,0 +1,582 @@
+:root {
+    --primary: #ff4d6d;
+    --primary-dark: #c9184a;
+    --secondary: #fff0f3;
+    --text: #2b2d42;
+    --text-light: #8d99ae;
+    --bg: #f8f9fa;
+    --white: #ffffff;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background-color: var(--bg);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Navigation */
+header {
+    background: var(--white);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary);
+    cursor: pointer;
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/wedflow-hero/1600/800');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 8rem 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.cta-btn:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+/* Features */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+/* Venues Page */
+.search-bar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    outline: none;
+}
+
+.search-bar button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.venue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.venue-card {
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.venue-card:hover {
+    transform: translateY(-10px);
+}
+
+.venue-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.venue-info {
+    padding: 1.5rem;
+}
+
+.venue-info h3 {
+    margin-bottom: 0.5rem;
+}
+
+.venue-info p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.venue-info button {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--secondary);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.venue-info button:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Details Page */
+.back-link {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.details-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+    .details-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.details-image img {
+    width: 100%;
+    border-radius: var(--radius);
+    height: 400px;
+    object-fit: cover;
+}
+
+.availability-box {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--secondary);
+    border-radius: var(--radius);
+}
+
+.check-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.check-form input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.status-msg {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.available { background: #d1fae5; color: #065f46; }
+.booked { background: #fee2e2; color: #991b1b; }
+
+/* About Page */
+.about-content {
+    background: white;
+    padding: 3rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.about-img {
+    width: 100%;
+    border-radius: var(--radius);
+    margin: 2rem 0;
+}
+
+/* Contact Page */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    background: white;
+    padding: 3rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-list {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.contact-list li {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Auth Page */
+.auth-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.auth-tabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    background: none;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: all 0.3s;
+}
+
+.auth-tab.active {
+    color: var(--primary);
+    border-bottom: 3px solid var(--primary);
+    background: var(--secondary);
+}
+
+.auth-form {
+    padding: 3rem;
+    text-align: center;
+}
+
+.auth-form h2 {
+    margin-bottom: 0.5rem;
+}
+
+.auth-form p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.auth-form .form-group {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.auth-switch {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.auth-switch a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.auth-link {
+    background: var(--primary);
+    color: white !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+}
+
+.auth-link:hover {
+    background: var(--primary-dark);
+}
+
+/* Chatbot Styles */
+.chatbot-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 2000;
+}
+
+.chatbot-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.chatbot-toggle:hover {
+    transform: scale(1.1);
+}
+
+.chat-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    height: 450px;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+.chat-header {
+    background: var(--primary);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h3 {
+    font-size: 1rem;
+}
+
+.chat-header button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: #fdfdfd;
+}
+
+.message {
+    padding: 0.8rem 1rem;
+    border-radius: 15px;
+    max-width: 80%;
+    font-size: 0.9rem;
+}
+
+.message.bot {
+    background: #f1f1f1;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+
+.message.user {
+    background: var(--primary);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+.chat-input {
+    padding: 1rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+}
+
+.chat-input button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .chat-window {
+        width: calc(100vw - 4rem);
+        right: -1rem;
+    }
+}
+
+/* Utility */
+.hidden { display: none; }
+footer {
+    text-align: center;
+    padding: 3rem;
+    background: var(--text);
+    color: white;
+    margin-top: 5rem;
+}
