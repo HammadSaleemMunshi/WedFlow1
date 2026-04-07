@@ -75,7 +75,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/wedflow-hero/1600/800');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('homebg.jpeg');
     background-size: cover;
     background-position: center;
     color: white;
